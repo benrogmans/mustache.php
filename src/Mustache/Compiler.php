@@ -189,7 +189,7 @@ class Mustache_Compiler
             if (%s) {
                 $source = %s;
                 $result = call_user_func($value, $source, $this->lambdaHelper);
-                if (strpos($result, \'{{\') === false) {
+                if (strpos($result, \'[[\') === false) {
                     $buffer .= $result;
                 } else {
                     $buffer .= $this->mustache
@@ -233,8 +233,8 @@ class Mustache_Compiler
         $source   = var_export(substr($this->source, $start, $end - $start), true);
         $callable = $this->getCallable();
 
-        if ($otag !== '{{' || $ctag !== '}}') {
-            $delims = ', '.var_export(sprintf('{{= %s %s =}}', $otag, $ctag), true);
+        if ($otag !== '[[' || $ctag !== ']]') {
+            $delims = ', '.var_export(sprintf('[[= %s %s =]]', $otag, $ctag), true);
         } else {
             $delims = '';
         }

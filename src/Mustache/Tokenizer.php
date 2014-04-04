@@ -191,8 +191,8 @@ class Mustache_Tokenizer
         $this->tokens    = array();
         $this->seenTag   = false;
         $this->line      = 0;
-        $this->otag      = '{{';
-        $this->ctag      = '}}';
+        $this->otag      = '[[';
+        $this->ctag      = ']]';
     }
 
     /**
